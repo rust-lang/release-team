@@ -27,4 +27,7 @@ Members will not obtain rust-lang membership from being a part of this WG, but t
 Meetings and interactions will be held in #triage-wg channel on discord (under ops). Occassional voice meetings might take place on Zoom.
 
 ### Code of Conduct:
-This working group is governed by the Rust Code of Conduct.
+All interactions on this repository (whether on issues, PRs, or
+elsewhere) are governed by the [Rust Code of
+Conduct](CODE_OF_CONDUCT.md).
+
