@@ -6,7 +6,7 @@ Members will not obtain rust-lang membership from being a part of this WG, but t
 
 ### How do I join?
 
--- If you are interested in joining this wg, leave a message in the #triage-wg channel on discord
+-- If you are interested in joining this wg, leave a message in the #triage-wg channel on the [rust-lang Discord][d]
 
 ### Who can join?
 
@@ -24,10 +24,11 @@ Members will not obtain rust-lang membership from being a part of this WG, but t
 - Rollups of PRs
 
 ### Communication:
-Meetings and interactions will be held in #triage-wg channel on discord (under ops). Occassional voice meetings might take place on Zoom.
+Meetings and interactions will be held in #triage-wg channel on [the rust-lang Discord][d] (under ops). Occassional voice meetings might take place on Zoom.
 
 ### Code of Conduct:
 All interactions on this repository (whether on issues, PRs, or
 elsewhere) are governed by the [Rust Code of
 Conduct](CODE_OF_CONDUCT.md).
 
+[d]: https://discord.gg/rust-lang
