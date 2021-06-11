@@ -1,0 +1,83 @@
+# Configuration used to generate the releases notes for rust-lang/rust
+# Used with https://github.com/EmbarkStudios/relnotes
+owner = "rust-lang"
+repo = "rust"
+# Replace with the current milestone dates
+from = "2021-03-20T17:19:00+01:00"
+to = "2021-04-30T15:24:00+01:00"
+date-format = "%Y-%m-%d"
+skip-labels = [
+    "beta-nominated",
+    "beta-accepted",
+    "stable-nominated",
+    "stable-accepted",
+    "rollup",
+]
+
+[[categories]]
+title = "Relnotes"
+labels = ["relnotes"]
+
+[[categories]]
+title = "Language"
+labels = ["T-lang"]
+
+[[categories]]
+title = "Compiler"
+labels = ["T-compiler"]
+
+[[categories]]
+title = "Libraries"
+labels = ["T-libs"]
+
+[[includes]]
+owner = "rust-lang"
+repo = "cargo"
+title = "Cargo"
+use-parent-for-timeframe = true
+
+[template]
+string = """
+Version {{version}} ({{date}})
+============================
+
+{% for title, prs in categories %}
+{{ title }}
+-----------------------
+
+    {% for pr in prs %}
+- [{{ pr.title }}][{{ pr.number }}]
+    {%- endfor %}
+{% endfor %}
+
+{% for include in includes %}
+{{ include.title }}
+-----------------------
+
+    {% for pr in include.prs %}
+- [{{ pr.title }}][{{ include.repo }}/{{ pr.number }}]
+    {%- endfor %}
+{% endfor %}
+
+UNSORTED
+--------
+{% for pr in prs -%}
+- [{{ pr.title }}][{{ pr.number }}]
+{% endfor %}
+
+{% for _, prs in categories %}
+{% for pr in prs -%}
+[{{ pr.number }}]: {{ pr.html_url }}
+{% endfor %}
+{%- endfor %}
+
+{%- for pr in prs -%}
+[{{pr.number}}]: {{pr.html_url}}
+{% endfor -%}
+
+{%- for include in includes -%}
+{% for pr in include.prs -%}
+[{{ include.repo }}/{{pr.number}}]: {{pr.html_url}}
+{% endfor %}
+{% endfor %}
+"""
