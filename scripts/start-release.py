@@ -26,6 +26,7 @@ def parse_args():
     commands.add_parser("publish-rust-dev-nightly")
     commands.add_parser("publish-rust-dev-beta")
     commands.add_parser("publish-rust-dev-stable-rebuild")
+    commands.add_parser("publish-rust-prod-beta")
     commands.add_parser("publish-rust-prod-stable")
 
     # Actions with arguments:
